@@ -1,0 +1,65 @@
+---
+title: " "
+author: Chris Stantis
+date: now
+format: html
+self-contained: true
+execute: 
+  warning: false
+fig-dpi: 600
+---
+
+# High Altitude Adaptation
+
+## Introduction
+
+This time, load the packages *you* think you need and import the data yourself (hemoglobin.csv). Write that code into the chunk below. Hint: you can always edit if you find you're missing a package you need.
+
+Name the dataframe whatever makes sense to you (do you like calling it 'df'? Or do you prefer something more descriptive, like 'hemoglobin' or 'altitude'?)
+
+```{r}
+# load libraries and import the data
+
+```
+
+## Basic Reporting
+
+Now, what information would you use in basic reporting of the data? Re-cycling code from last week or from this week's introduction to dplyr, generate the information you need to introduce the data to someone. Write a few sentences explaining what this data are. Remember, you generally want to include:
+
+-   Total number of observations (*n* = )
+
+-   Description of variables (type, summary statistics like frequency, mean, sd)
+
+-   The original study as a citation.
+
+```{r}
+# create summary data you think you need for reporting
+
+```
+
+## Data Visualization
+
+Let's create graphs you think are useful for showcasing the information. First, write below (ideally using bullet points or numbered list in Markdown) what graphs you'd like to see. Then, create at least two exploratory graphs. I'll create one for you first, using ggplot2 package. You may need to change the dataframe name. Create two new code chunks, one per graph. Under each code chunk, write what this graph is showing and why you chose to compare that/those variable(s).
+
+***Hints***
+
+-   [R Graph Gallery](https://r-graph-gallery.com/) has great examples of how to plot different chart types. I'll try to remember to show this off in class, but have a look, it's pretty straightforward.
+
+-   For coloring in different plot types, there's a difference between 'color' and 'fill' in the aes() function. If one isn't doing what you want, try changing it to the other.
+
+```{r}
+# ggplot data vis (hint: do you have the package you need to run this?)
+
+ggplot(data = df, aes(x = hemoglobin, fill = group)) + 
+  geom_bar(position = 'dodge') + # position = 'dodge' means it gives each group its own bar
+  theme_classic()
+
+```
+
+## Predictor/outcomeVariables
+
+Write a few sentences about the in/dependent variables, identify which of the three variables are independent, and which are dependent.
+
+## Extending beyond the study
+
+Finally, write a few sentences about what trends you're seeing, and what they might mean. Is there any other information you wish were recorded, that might have helped or extended this study?
