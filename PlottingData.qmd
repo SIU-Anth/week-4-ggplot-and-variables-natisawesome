@@ -9,6 +9,7 @@ execute:
 fig-dpi: 600
 ---
 
+
 # High Altitude Adaptation
 
 ## Introduction
@@ -18,9 +19,11 @@ This time, load the packages *you* think you need and import the data yourself (
 Name the dataframe whatever makes sense to you (do you like calling it 'df'? Or do you prefer something more descriptive, like 'hemoglobin' or 'altitude'?)
 
 ```{r}
-# load libraries and import the data
+#  install.packages("ggplot2") 
+library(ggplot2)
 
 ```
+
 
 ## Basic Reporting
 
@@ -32,6 +35,9 @@ Now, what information would you use in basic reporting of the data? Re-cycling c
 
 -   The original study as a citation.
 
+# Introduction
+
+Beall et al. assessed populations with high altitude adaptation via hemoglobin analysis (n = 799) from three populations Ethiopian high-altitude, Andean high-altitude, Tibetan high-altitude, and US sea level. They recorded traits such as amount of hemoglobin detected, group, and sex.
 ```{r}
 # create summary data you think you need for reporting
 
@@ -63,3 +69,4 @@ Write a few sentences about the in/dependent variables, identify which of the th
 ## Extending beyond the study
 
 Finally, write a few sentences about what trends you're seeing, and what they might mean. Is there any other information you wish were recorded, that might have helped or extended this study?
+
