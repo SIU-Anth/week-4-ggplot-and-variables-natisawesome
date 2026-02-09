@@ -35,7 +35,7 @@ Now, what information would you use in basic reporting of the data? Re-cycling c
 
 -   The original study as a citation.
 
-# Introduction
+## Introduction 
 
 Beall et al. assessed populations with high altitude adaptation via hemoglobin analysis (n = 799) from three populations Ethiopian high-altitude, Andean high-altitude, Tibetan high-altitude, and US sea level. They recorded traits such as amount of hemoglobin detected, group, and sex.
 ```{r}
@@ -47,11 +47,48 @@ Beall et al. assessed populations with high altitude adaptation via hemoglobin a
 
 Let's create graphs you think are useful for showcasing the information. First, write below (ideally using bullet points or numbered list in Markdown) what graphs you'd like to see. Then, create at least two exploratory graphs. I'll create one for you first, using ggplot2 package. You may need to change the dataframe name. Create two new code chunks, one per graph. Under each code chunk, write what this graph is showing and why you chose to compare that/those variable(s).
 
+## Graphs I would like to see
+- Scatterplot
+- Histogram
 ***Hints***
 
 -   [R Graph Gallery](https://r-graph-gallery.com/) has great examples of how to plot different chart types. I'll try to remember to show this off in class, but have a look, it's pretty straightforward.
 
 -   For coloring in different plot types, there's a difference between 'color' and 'fill' in the aes() function. If one isn't doing what you want, try changing it to the other.
+
+```{r}
+ggplot(data = df, aes(x = hemoglobin)) + 
+  geom_histogram(bins = 30, fill = 'steelblue', color = "white") 
+
+```
+
+```{r}
+I chose to do the above histogram because it shows the distribution of the values. A future researcher could analyze this a discuss the skew and the reason it is skewed.
+```
+
+
+I also tried to make a scatterplot, but alas it appears to just be lines.
+
+
+```{r}
+ggplot(data = df, aes(x = hemoglobin, fill = group)) +
+  geom_histogram(bins = 30, alpha = 0.7, position = "identity")
+```
+
+```{r}
+I chose to do the below histogram because it shows the distribution of values and it is color coded. This graph helps provide a more in depth look at how the data is distributed between groups.
+```
+
+
+```{r}
+ggplot(data = df, aes(y = hemoglobin, x = group, color = group)) +
+  geom_point(alpha = 0.7) 
+```
+
+```{r}
+I also tried to make a scatterplot, but alas it appears to just be lines.
+```
+
 
 ```{r}
 # ggplot data vis (hint: do you have the package you need to run this?)
@@ -66,7 +103,12 @@ ggplot(data = df, aes(x = hemoglobin, fill = group)) +
 
 Write a few sentences about the in/dependent variables, identify which of the three variables are independent, and which are dependent.
 
+
+The dependent variable is the hemoglobin levels. This is because the hemoglobin levels are what is being measured. The independent variables are group and sex. This is because they are being recorded to analyze the effect they may have on the dependent variable.
+
 ## Extending beyond the study
 
 Finally, write a few sentences about what trends you're seeing, and what they might mean. Is there any other information you wish were recorded, that might have helped or extended this study?
+
+Groups from higher altitudes appear to have higher hemoglobin levels. This may mean that to process the oxygen in high altitudes their bodies adapted to be able to produce more hemoglobin.In the future, researches could look at diet and activity to see if those variables have a role on hemoglobin counts in high altitude. 
 
